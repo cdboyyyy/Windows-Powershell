@@ -1,4 +1,0 @@
-$name = hostname
-Get-WmiObject -Class Win32_ComputerSystem > \\NETWORKLOCATION\$name'.xml'
-wmic bios get serialnumber >> \\NETWORKLOCATION\$name'.xml'
-gwmi WmiMonitorID -Namespace root\wmi | ForEach-Object {($_.UserFriendlyName | foreach {[char]$_}) -join ""; ($_.SerialNumberID -notmatch 0 | foreach {[char]$_}) -join ""} >> \\NETWORKLOCATION\$name'.txt'
